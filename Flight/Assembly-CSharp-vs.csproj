@@ -47,9 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ShipCreation\Camera\ShipCreationCameraController.cs" />
+     <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\GizmoAxis.cs" />
+     <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\GizmoController.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\MouseListener.cs" />
-     <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\TranslateGizmoAxis.cs" />
-     <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\TranslateGizmoController.cs" />
+     <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\RotateGizmo.cs" />
+     <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\TranslateGizmo.cs" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />

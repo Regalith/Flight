@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TranslateGizmoAxis : MonoBehaviour {
+public class GizmoAxis : MonoBehaviour {
 
 	//Material variables
 	public Material highlightMaterial;

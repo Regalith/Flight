@@ -3,14 +3,14 @@ using System.Collections;
 
 [RequireComponent (typeof (MouseListener))]
 
-public class TranslateGizmoController : MonoBehaviour {
+public class GizmoController : MonoBehaviour {
 
-	public TranslateGizmoAxis[] axis;
+	public GizmoAxis[] axis;
 	public float translateSpeed;
-	private GameObject parent;
-	private TranslateGizmoAxis selected;
-	private MouseListener mListener;
-	private GameObject mainCamera;
+	protected GameObject parent;
+	protected GizmoAxis selected;
+	protected MouseListener mListener;
+	protected GameObject mainCamera;
 
 	// Use this for initialization
 	void Start () 
@@ -30,7 +30,7 @@ public class TranslateGizmoController : MonoBehaviour {
 
 		if(Input.GetMouseButton(0))
 		{
-			TranslateObject();
+			ModifyObject();
 		}
 		if(Input.GetMouseButtonUp(0))
 		{
@@ -39,33 +39,17 @@ public class TranslateGizmoController : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Translates the object based on the selected Axis.
+	/// Modifies the object based on the selected Axis.
 	/// </summary>
-	void TranslateObject()
-	{
-		if(selected == null)
-			return;
-
-		switch(selected.axis)
-		{
-		case "x":
-			parent.transform.Translate(translateSpeed * determineCameraOrientation(0) * mListener.GetMouseDeltaX() * Time.deltaTime,0,0);
-			break;
-		case "y":
-			parent.transform.Translate(0,translateSpeed * mListener.GetMouseDeltaY() * Time.deltaTime,0);
-			break;
-		case "z":
-			parent.transform.Translate(0,0,translateSpeed * determineCameraOrientation(1) * mListener.GetMouseDeltaX() * Time.deltaTime);
-			break;
-		}
-	}
+	protected virtual void ModifyObject(){return;}
+	
 
 	/// <summary>
 	/// Finds the selected axis which is being hovered over.
 	/// </summary>
-	void FindSelected()
+	protected void FindSelected()
 	{
-		foreach (TranslateGizmoAxis t in axis)
+		foreach (GizmoAxis t in axis)
 		{
 			if(t.GetHovered())
 			{
@@ -84,14 +68,18 @@ public class TranslateGizmoController : MonoBehaviour {
 		selected = null;
 
 		//reset attributes for each axis
-		foreach (TranslateGizmoAxis t in axis)
+		foreach (GizmoAxis t in axis)
 		{
 			t.Reset();
 		}
 	}
 
-
-	int determineCameraOrientation(int axis)
+	/// <summary>
+	/// Determines the camera orientation.
+	/// </summary>
+	/// <returns>Modifier direction</returns>
+	/// <param name="axis">Axis being modified</param>
+	protected int determineCameraOrientation(int axis)
 	{
 		int direction = 0;
 		switch(axis)
