@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (MouseListener))]
+[RequireComponent (typeof (MouseLook))]
 
 public class ShipCreationCameraController : MonoBehaviour {
 	
 	public float rotationSpeed;
 	public float movementSpeed;
 
-	private MouseListener mListener;
-
+	private MouseLook mLook;
 	// Use this for initialization
 	void Start () 
 	{
-		mListener = this.gameObject.GetComponent<MouseListener> ();
+		mLook = this.gameObject.GetComponent<MouseLook> ();
+		mLook.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -24,10 +24,15 @@ public class ShipCreationCameraController : MonoBehaviour {
 
 	void CheckInput()
 	{
-		if(Input.GetMouseButton(1))
+		if(Input.GetMouseButtonDown(1))
 		{
-			Debug.Log ("ROTATE");
-			transform.Rotate(-mListener.GetMouseDeltaY() * rotationSpeed * Time.deltaTime,mListener.GetMouseDeltaX() * rotationSpeed * Time.deltaTime,0);
+			mLook.enabled = true;
+			Screen.lockCursor = true;
+		}
+		if(Input.GetMouseButtonUp(1))
+		{
+			mLook.enabled = false;
+			Screen.lockCursor = false;
 		}
 		if(Input.GetKey(KeyCode.W))
 		{

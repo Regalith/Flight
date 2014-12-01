@@ -10,12 +10,14 @@ public class TranslateGizmoController : MonoBehaviour {
 	private GameObject parent;
 	private TranslateGizmoAxis selected;
 	private MouseListener mListener;
+	private GameObject mainCamera;
 
 	// Use this for initialization
 	void Start () 
 	{
 		parent = this.gameObject.transform.parent.gameObject;
 		mListener = this.gameObject.GetComponent<MouseListener> ();
+		mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
 	}
 	
 	// Update is called once per frame
@@ -47,13 +49,13 @@ public class TranslateGizmoController : MonoBehaviour {
 		switch(selected.axis)
 		{
 		case "x":
-			parent.transform.Translate(-translateSpeed * mListener.GetMouseDeltaX() * Time.deltaTime,0,0);
+			parent.transform.Translate(translateSpeed * determineCameraOrientation(0) * mListener.GetMouseDeltaX() * Time.deltaTime,0,0);
 			break;
 		case "y":
 			parent.transform.Translate(0,translateSpeed * mListener.GetMouseDeltaY() * Time.deltaTime,0);
 			break;
 		case "z":
-			parent.transform.Translate(0,0,-translateSpeed * mListener.GetMouseDeltaX() * Time.deltaTime);
+			parent.transform.Translate(0,0,translateSpeed * determineCameraOrientation(1) * mListener.GetMouseDeltaX() * Time.deltaTime);
 			break;
 		}
 	}
@@ -86,6 +88,28 @@ public class TranslateGizmoController : MonoBehaviour {
 		{
 			t.Reset();
 		}
+	}
+
+
+	int determineCameraOrientation(int axis)
+	{
+		int direction = 0;
+		switch(axis)
+		{
+		case 0:
+			if(mainCamera.transform.position.z < this.transform.position.z)
+				direction = 1;
+			else
+				direction = -1;
+			break;
+		case 1:
+			if(mainCamera.transform.position.x > this.transform.position.x)
+				direction = 1;
+			else
+				direction = -1;
+			break;
+		}
+		return direction;
 	}
 
 
