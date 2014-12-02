@@ -30,6 +30,11 @@ public class Gizmo : MonoBehaviour {
 		rotate.SetActive (false);
 	}
 
+	public void Delete()
+	{
+		Destroy (this.gameObject.transform.parent.gameObject);
+	}
+
 	public bool CheckActive()
 	{
 		if(translate.GetComponent<GizmoController>().CheckSelected() || rotate.GetComponent<GizmoController>().CheckSelected())

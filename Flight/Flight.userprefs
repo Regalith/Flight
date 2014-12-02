@@ -1,8 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Utility\MouseSelector.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShipCreation\ItemManipulators\ItemModifier.cs">
     <Files>
-      <File FileName="Assets\Scripts\Utility\MouseSelector.cs" Line="48" Column="2" />
+      <File FileName="Assets\Scripts\Utility\MouseSelector.cs" Line="18" Column="26" />
+      <File FileName="Assets\Scripts\ShipCreation\ItemManipulators\BuildManager.cs" Line="50" Column="17" />
+      <File FileName="Assets\Scripts\ShipCreation\ItemManipulators\ItemModifier.cs" Line="68" Column="4" />
+      <File FileName="Assets\Scripts\ShipCreation\ItemManipulators\Gizmo.cs" Line="35" Column="57" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

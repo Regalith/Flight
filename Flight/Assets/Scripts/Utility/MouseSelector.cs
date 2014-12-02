@@ -4,7 +4,7 @@ using System.Collections;
 public class MouseSelector : MonoBehaviour {
 
 	public MonoBehaviour script;
-
+	private bool button = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,7 +18,7 @@ public class MouseSelector : MonoBehaviour {
 			script.enabled = true;
 		}
 
-		if(Input.GetMouseButtonUp(0) && !CheckMouseOver())
+		if((Input.GetMouseButtonUp(0) && !CheckMouseOver()) && !button)
 		{
 			script.enabled = false;
 		}
@@ -42,6 +42,15 @@ public class MouseSelector : MonoBehaviour {
 		
 		return false;
 		
+	}
+
+	public void ButtonHoverEnter()
+	{
+		button = true;
+	}
+	public void ButtonHoverExit ()
+	{
+		button = false;
 	}
 
 }

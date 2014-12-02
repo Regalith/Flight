@@ -6,7 +6,6 @@ public class ItemModifier : MonoBehaviour {
 	private Gizmo gizmo;
 	public Material highlightMat;
 	private Material defaultMat;
-	private BuildManager bManager;
 
 
 
@@ -46,7 +45,11 @@ public class ItemModifier : MonoBehaviour {
 	void OnEnable()
 	{
 		if(gizmo == null)
+		{
 			SpawnGizmo ();
+			BuildManager.instance.SetSelected (gizmo);
+
+		}
 		this.renderer.material = highlightMat;
 
 	}
@@ -56,11 +59,13 @@ public class ItemModifier : MonoBehaviour {
 		if(gizmo.CheckActive())
 		{
 			this.enabled = true;
-			return;
 		}
-		Destroy (gizmo.gameObject);
-		gizmo = null;
-		this.renderer.material = defaultMat;
+		else
+		{
+			Destroy (gizmo.gameObject);
+			gizmo = null;
+			this.renderer.material = defaultMat;
+		}
 
 	}
 }
