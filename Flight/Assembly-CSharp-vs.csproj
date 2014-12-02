@@ -47,18 +47,22 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ShipCreation\Camera\ShipCreationCameraController.cs" />
+     <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\Gizmo.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\GizmoAxis.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\GizmoController.cs" />
+     <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\ItemModifier.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\MouseListener.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\RotateGizmo.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\TranslateGizmo.cs" />
+     <Compile Include="Assets\Scripts\Utility\MouseSelector.cs" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
+     <None Include="Assets\Scripts\ShipCreation\ItemManipulators\OutlineDifuse.shader" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-Water4.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/tsbujnevicie/Desktop/Flight/Flight/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/tsbujnevicie/Desktop/flight/Flight/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
