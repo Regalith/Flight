@@ -100,5 +100,13 @@ public class GizmoController : MonoBehaviour {
 		return direction;
 	}
 
+	public bool CheckSelected()
+	{
+		if(selected != null)
+			return true;
+		else
+			return false;
+	}
+
 
 }

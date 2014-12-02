@@ -36,7 +36,7 @@ public class GizmoAxis : MonoBehaviour {
 		RaycastHit hit;
 		if(Physics.Raycast(ray,out hit,Mathf.Infinity,layerMask))
 		{
-			if(hit.collider == this.gameObject.collider)
+			if(hit.collider == this.gameObject.collider || hit.collider == this.gameObject.transform.GetComponentInChildren<Collider>())
 			{
 				this.renderer.material = highlightMaterial;
 				hovered = true;

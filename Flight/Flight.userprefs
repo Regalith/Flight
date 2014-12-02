@@ -1,9 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShipCreation\ItemManipulators\GizmoAxis.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShipCreation\ItemManipulators\BuildManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\ShipCreation\Camera\ShipCreationCameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ShipCreation\ItemManipulators\GizmoAxis.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShipCreation\ItemManipulators\GizmoController.cs" Line="99" Column="4" />
+      <File FileName="Assets\Scripts\ShipCreation\ItemManipulators\ItemModifier.cs" Line="66" Column="1" />
+      <File FileName="Assets\Scripts\Utility\MouseSelector.cs" Line="48" Column="1" />
+      <File FileName="Assets\Scripts\ShipCreation\ItemManipulators\Gizmo.cs" Line="12" Column="54" />
+      <File FileName="Assets\Scripts\ShipCreation\Camera\ShipCreationCameraController.cs" Line="34" Column="11" />
+      <File FileName="Assets\Scripts\ShipCreation\ItemManipulators\BuildManager.cs" Line="19" Column="30" />
+      <File FileName="Assets\Scripts\ShipCreation\ItemManipulators\MouseListener.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
