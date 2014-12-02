@@ -9,6 +9,7 @@ public class ItemModifier : MonoBehaviour {
 	private BuildManager bManager;
 
 
+
 	void Awake()
 	{
 		defaultMat = this.renderer.material;
