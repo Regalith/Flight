@@ -4,21 +4,29 @@ using System.Collections;
 public class ItemModifier : MonoBehaviour {
 
 	private Gizmo gizmo;
-	public Material highlightMat;
+	private Material highlightMatIncorrect;
+	private Material highlightMatCorrect;
 	private Material defaultMat;
-
-
+	private PlacementValidator pValidator;
+	public bool baseComponent = false;
 
 	void Awake()
 	{
 		defaultMat = this.renderer.material;
-		highlightMat = Resources.Load ("Utility/OutlinedRed") as Material;
+		highlightMatIncorrect = Resources.Load ("Utility/OutlinedRed") as Material;
+		highlightMatCorrect = Resources.Load ("Utility/OutlinedWhite") as Material;
+
+		if(!baseComponent)
+			pValidator = transform.Find ("PlacementValidator").GetComponent<PlacementValidator>();
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
 		CheckInput ();
+
+		if(!baseComponent)
+			CheckValidPlacement ();
 	}
 
 	void SpawnGizmo()
@@ -43,23 +51,26 @@ public class ItemModifier : MonoBehaviour {
 		}
 	}
 
+
+	void CheckValidPlacement()
+	{
+		if (pValidator.ValidPlacement ())
+		{
+			ChangeMaterialColors(highlightMatCorrect);
+			Debug.Log ("Correct");
+		}
+		else
+		{
+			this.renderer.material = highlightMatIncorrect;
+		}
+	}
+
 	void OnEnable()
 	{
 
-		this.renderer.material = highlightMat;
-		Transform[] allChildren = this.GetComponentsInChildren<Transform>();
-		foreach (Transform child in allChildren) 
-		{
-			if(child.tag != "Gizmo" && child.tag != "Placement")
-				child.renderer.material = highlightMat;	
-		}
-		if(gizmo == null)
-		{
-			SpawnGizmo ();
-			BuildManager.instance.SetSelected (gizmo);
-			
-		}
-
+		this.renderer.material = highlightMatIncorrect;
+		ChangeMaterialColors (highlightMatIncorrect);
+		SpawnGizmo ();
 	}
 
 	void OnDisable ()
@@ -72,14 +83,23 @@ public class ItemModifier : MonoBehaviour {
 		{
 			Destroy (gizmo.gameObject);
 			gizmo = null;
-			this.renderer.material = defaultMat;
-			Transform[] allChildren = this.GetComponentsInChildren<Transform>();
-			foreach (Transform child in allChildren) 
-			{
-				if(child.tag != "Gizmo" && child.tag != "Placement")
-					child.renderer.material = defaultMat;	
-			}
+			ChangeMaterialColors(defaultMat);
 		}
 
+	}
+	public PlacementValidator GetPlacementValidator()
+	{
+		return pValidator;
+	}
+
+	private void ChangeMaterialColors(Material mat)
+	{
+		this.renderer.material = mat;
+		Transform[] allChildren = this.GetComponentsInChildren<Transform>();
+		foreach (Transform child in allChildren) 
+		{
+			if(child.tag != "Gizmo" && child.tag != "PlacementValidator")
+				child.renderer.material = mat;	
+		}
 	}
 }

@@ -14,4 +14,19 @@ public class PlacementValidator : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public bool ValidPlacement()
+	{	
+		int cornersCorrect = 0;
+		foreach(PlacementNode n in nodes)
+		{
+			if(n.Valid())
+				cornersCorrect++;
+		}
+		if (cornersCorrect == 4)
+						return true;
+				else
+						return false;
+
+	}
 }

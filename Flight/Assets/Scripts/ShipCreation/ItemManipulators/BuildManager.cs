@@ -5,6 +5,7 @@ public class BuildManager : MonoBehaviour {
 
 	private Gizmo selected;
 
+
 	//Here is a private reference only this class can access
 	private static BuildManager _instance;
 	
@@ -20,7 +21,6 @@ public class BuildManager : MonoBehaviour {
 			return _instance;
 		}
 	}
-
 
 	public void TurnOnTranslate()
 	{
