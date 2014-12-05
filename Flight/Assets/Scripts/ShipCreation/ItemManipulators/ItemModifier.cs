@@ -12,7 +12,7 @@ public class ItemModifier : MonoBehaviour {
 	void Awake()
 	{
 		defaultMat = this.renderer.material;
-		highlightMat = Resources.Load ("Utility/Outlined") as Material;
+		highlightMat = Resources.Load ("Utility/OutlinedRed") as Material;
 	}
 
 	// Update is called once per frame
@@ -26,6 +26,7 @@ public class ItemModifier : MonoBehaviour {
 		GameObject tempGiz = Instantiate(Resources.Load("Prefabs/Gizmo")) as GameObject;
 		tempGiz.transform.parent = this.gameObject.transform;
 		tempGiz.transform.localPosition = new Vector3 (0, 0, 0);
+		tempGiz.transform.rotation = this.gameObject.transform.rotation;
 		gizmo = tempGiz.GetComponent<Gizmo> ();
 	}
 
@@ -44,13 +45,20 @@ public class ItemModifier : MonoBehaviour {
 
 	void OnEnable()
 	{
+
+		this.renderer.material = highlightMat;
+		Transform[] allChildren = this.GetComponentsInChildren<Transform>();
+		foreach (Transform child in allChildren) 
+		{
+			if(child.tag != "Gizmo" && child.tag != "Placement")
+				child.renderer.material = highlightMat;	
+		}
 		if(gizmo == null)
 		{
 			SpawnGizmo ();
 			BuildManager.instance.SetSelected (gizmo);
-
+			
 		}
-		this.renderer.material = highlightMat;
 
 	}
 
@@ -65,6 +73,12 @@ public class ItemModifier : MonoBehaviour {
 			Destroy (gizmo.gameObject);
 			gizmo = null;
 			this.renderer.material = defaultMat;
+			Transform[] allChildren = this.GetComponentsInChildren<Transform>();
+			foreach (Transform child in allChildren) 
+			{
+				if(child.tag != "Gizmo" && child.tag != "Placement")
+					child.renderer.material = defaultMat;	
+			}
 		}
 
 	}
