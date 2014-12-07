@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BuildManager : MonoBehaviour {
 
-	private Gizmo selected;
+	public Gizmo selected;
 
 
 	//Here is a private reference only this class can access

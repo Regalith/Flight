@@ -23,10 +23,10 @@ public class PlacementValidator : MonoBehaviour {
 			if(n.Valid())
 				cornersCorrect++;
 		}
-		if (cornersCorrect == 4)
-						return true;
-				else
-						return false;
+		if(cornersCorrect == 4)
+			return true;
+		else
+			return false;
 
 	}
 }

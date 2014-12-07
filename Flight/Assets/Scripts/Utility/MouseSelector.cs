@@ -5,6 +5,7 @@ public class MouseSelector : MonoBehaviour {
 
 	public MonoBehaviour script;
 	private bool button = false;
+	private bool currentSelected;
 	// Use this for initialization
 	void Start () {
 	
@@ -13,7 +14,12 @@ public class MouseSelector : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetMouseButtonUp(0) && CheckMouseOver())
+		if(Input.GetMouseButtonDown(0))
+		{
+			currentSelected = CheckMouseOver();
+		}
+
+		if(Input.GetMouseButtonUp(0) && CheckMouseOver() && currentSelected)
 		{
 			script.enabled = true;
 		}
@@ -47,6 +53,7 @@ public class MouseSelector : MonoBehaviour {
 	public void ButtonHoverEnter()
 	{
 		button = true;
+		Debug.Log ("HOVERED");
 	}
 	public void ButtonHoverExit ()
 	{

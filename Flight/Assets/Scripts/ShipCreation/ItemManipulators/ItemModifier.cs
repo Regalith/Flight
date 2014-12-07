@@ -57,11 +57,10 @@ public class ItemModifier : MonoBehaviour {
 		if (pValidator.ValidPlacement ())
 		{
 			ChangeMaterialColors(highlightMatCorrect);
-			Debug.Log ("Correct");
 		}
 		else
 		{
-			this.renderer.material = highlightMatIncorrect;
+			ChangeMaterialColors(highlightMatIncorrect);
 		}
 	}
 
@@ -71,6 +70,7 @@ public class ItemModifier : MonoBehaviour {
 		this.renderer.material = highlightMatIncorrect;
 		ChangeMaterialColors (highlightMatIncorrect);
 		SpawnGizmo ();
+		BuildManager.instance.SetSelected (gizmo);
 	}
 
 	void OnDisable ()
