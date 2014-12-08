@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Cannon : MonoBehaviour {
 
-	public int damage { get; set; }
-	public int range { get; set; }
-	public int fireRate { get; set; }
-	public int health { get; set; }
-	public int armor { get; set; }
+	public int damage = 0;
+	public int range = 0;
+	public int fireRate = 0;
+	public int health = 0;
+	public int armor = 0;
 
 	// Use this for initialization
 	void Start () {
