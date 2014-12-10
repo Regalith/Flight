@@ -1,0 +1,100 @@
+fileFormatVersion: 2
+guid: 0819a3317af38eb4d9b266fe924194ee
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Barrel
+    100002: BarrelRotator
+    100004: Battery
+    100006: BatteryRotator
+    100008: Door
+    100010: Grate
+    100012: polySurface2
+    100014: //RootNode
+    400000: Barrel
+    400002: BarrelRotator
+    400004: Battery
+    400006: BatteryRotator
+    400008: Door
+    400010: Grate
+    400012: polySurface2
+    400014: //RootNode
+    2300000: Barrel
+    2300002: BarrelRotator
+    2300004: Battery
+    2300006: BatteryRotator
+    2300008: Door
+    2300010: Grate
+    2300012: polySurface2
+    2300014: //RootNode
+    3300000: Barrel
+    3300002: BarrelRotator
+    3300004: Battery
+    3300006: BatteryRotator
+    3300008: Door
+    3300010: Grate
+    3300012: polySurface2
+    3300014: //RootNode
+    4300000: BatteryBase1
+    4300002: Battery
+    4300004: BarrelRotator
+    4300006: Barrel
+    4300008: polySurface2
+    4300010: Door
+    4300012: Grate
+    4300014: BatteryRotator
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
