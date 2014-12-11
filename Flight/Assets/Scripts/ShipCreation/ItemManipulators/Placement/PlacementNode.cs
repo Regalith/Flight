@@ -7,11 +7,9 @@ public class PlacementNode : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log ("Hit");
 		if(other.tag == "PlacementZone")
 		{
 			correctlyPlaced = true;
-			Debug.Log ("true");
 		}
 	}
 

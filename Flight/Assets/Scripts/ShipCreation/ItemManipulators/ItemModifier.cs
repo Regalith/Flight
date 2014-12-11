@@ -75,16 +75,17 @@ public class ItemModifier : MonoBehaviour {
 
 	void OnDisable ()
 	{
+		/*
 		if(gizmo.CheckActive())
 		{
 			this.enabled = true;
 		}
 		else
-		{
+		{*/
 			Destroy (gizmo.gameObject);
 			gizmo = null;
 			ChangeMaterialColors(defaultMat);
-		}
+		//}
 
 	}
 	public PlacementValidator GetPlacementValidator()

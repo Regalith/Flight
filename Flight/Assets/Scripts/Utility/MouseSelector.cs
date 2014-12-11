@@ -4,7 +4,6 @@ using System.Collections;
 public class MouseSelector : MonoBehaviour {
 
 	public MonoBehaviour script;
-	private bool button = false;
 	private bool currentSelected;
 	// Use this for initialization
 	void Start () {
@@ -24,21 +23,34 @@ public class MouseSelector : MonoBehaviour {
 			script.enabled = true;
 		}
 
-		if((Input.GetMouseButtonUp(0) && !CheckMouseOver()) && !button)
+		if((Input.GetMouseButtonUp(0) && !CheckMouseOver()) && !BuildManager.instance.buttonHovered && !currentSelected)
 		{
 			script.enabled = false;
 		}
 	}
-
+	/// <summary>
+	/// Checks whether the cursor is currently on top of this game Object.
+	/// </summary>
+	/// <returns><c>true</c>, if mouse is object this object, <c>false</c> otherwise.</returns>
 	bool CheckMouseOver()
 	{
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if(Physics.Raycast(ray,out hit,Mathf.Infinity))
 		{
-			if(hit.collider == this.gameObject.collider || hit.collider == this.gameObject.transform.GetComponentInChildren<Collider>())
-			{
+			GameObject parent = DetermineParent(this.gameObject);
+			Collider[] colliders = parent.GetComponentsInChildren<Collider>();
+
+			//If the parent collider is the collider hit, return true
+			if(hit.collider == parent.collider)
 				return true;
+
+			for(int i = 0; i < colliders.Length; i++)
+			{
+				if(hit.collider == colliders[i])
+				{
+					return true;
+				}
 			}
 		}
 		else
@@ -50,14 +62,21 @@ public class MouseSelector : MonoBehaviour {
 		
 	}
 
-	public void ButtonHoverEnter()
+	/// <summary>
+	/// Determines the parent of any gameobject passed in
+	/// </summary>
+	/// <returns>The parent.</returns>
+	/// <param name="child">Child hit by raycast.</param>
+	GameObject DetermineParent(GameObject child)
 	{
-		button = true;
-		Debug.Log ("HOVERED");
-	}
-	public void ButtonHoverExit ()
-	{
-		button = false;
+		GameObject potentialParent = child;
+
+		while(potentialParent.transform.parent != null)
+		{
+			potentialParent = potentialParent.transform.parent.gameObject;
+
+		}
+		return potentialParent;
 	}
 
 }

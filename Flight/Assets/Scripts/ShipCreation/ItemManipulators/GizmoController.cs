@@ -107,6 +107,4 @@ public class GizmoController : MonoBehaviour {
 		else
 			return false;
 	}
-
-
 }

@@ -4,7 +4,7 @@ using System.Collections;
 public class BuildManager : MonoBehaviour {
 
 	public Gizmo selected;
-
+	public bool buttonHovered { get; set; }
 
 	//Here is a private reference only this class can access
 	private static BuildManager _instance;
@@ -47,13 +47,11 @@ public class BuildManager : MonoBehaviour {
 
 	public void ButtonHoverEnter()
 	{
-		if(selected != null)
-			selected.transform.parent.gameObject.GetComponent<MouseSelector> ().ButtonHoverEnter ();
+		buttonHovered = true;
 	}
 	public void ButtonHoverExit ()
 	{
-		if(selected != null)
-			selected.transform.parent.gameObject.GetComponent<MouseSelector> ().ButtonHoverExit ();
+		buttonHovered = false;
 	}
 
 }
