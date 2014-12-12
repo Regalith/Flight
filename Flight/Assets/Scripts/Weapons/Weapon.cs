@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Cannon : MonoBehaviour {
+public enum WeaponType {Cannon, MachineGun};
 
+[AddComponentMenu("Scripts/ShipComponents/Weapons/Weapon")]
+public class Weapon : ShipComponent 
+{
+	public WeaponType weaponType;
 	public int damage = 0;
 	public int range = 0;
-	public int fireRate = 0;
+	public int rateOfFire = 0;
 	public int health = 0;
 	public int armor = 0;
 

@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Cannon.cs" />
+     <Compile Include="Assets\ItemButton.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -183,6 +183,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\PreviewCamera.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\Camera\ShipCreationCameraController.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\BuildManager.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\Gizmo.cs" />
@@ -194,7 +195,12 @@
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\Placement\PlacementValidator.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\RotateGizmo.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\TranslateGizmo.cs" />
+     <Compile Include="Assets\Scripts\UI\Inspector\Inspector.cs" />
+     <Compile Include="Assets\Scripts\UI\Inspector\WeaponInspector.cs" />
      <Compile Include="Assets\Scripts\Utility\MouseSelector.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Cannon.cs" />
+     <Compile Include="Assets\Scripts\Weapons\ShipComponent.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.4.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
