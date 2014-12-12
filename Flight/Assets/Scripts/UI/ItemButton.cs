@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+[RequireComponent (typeof (ComponentDragDropItem))]
+
 public class ItemButton : MonoBehaviour {
 
 	public string itemPath;
@@ -16,6 +19,8 @@ public class ItemButton : MonoBehaviour {
 		Debug.Log (tempItem.name);
 		item = tempItem.GetComponent<ShipComponent> ();
 		weaponInspector = FindInspectors ("WeaponInspector");
+		this.gameObject.GetComponent<ComponentDragDropItem> ().setItemPath (itemPath);
+
 	}
 	
 	// Update is called once per frame
@@ -27,7 +32,7 @@ public class ItemButton : MonoBehaviour {
 		switch(item.componentType)
 		{
 		case ComponentType.Weapon:
-			weaponInspector.SetActive(true);
+			//weaponInspector.SetActive(true);
 			weaponInspector.GetComponent<WeaponInspector>().SetShipComponent(item);
 			weaponInspector.GetComponent<WeaponInspector>().SetPath(itemPath);
 			weaponInspector.GetComponent<WeaponInspector>().TurnOn();
@@ -38,7 +43,7 @@ public class ItemButton : MonoBehaviour {
 
 	void HideInspector()
 	{
-		activeInspector.SetActive (false);
+		//activeInspector.SetActive (false);
 		activeInspector.GetComponent<Inspector>().TurnOff ();
 		activeInspector.GetComponent<UIWidget> ().alpha = 0;
 

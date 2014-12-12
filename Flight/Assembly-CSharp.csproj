@@ -193,11 +193,11 @@
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\Placement\PlacementValidator.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\RotateGizmo.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\TranslateGizmo.cs" />
-     <Compile Include="Assets\Scripts\UI\Inspector\ComponentDragAndDrop.cs" />
+     <Compile Include="Assets\Scripts\UI\ComponentDragDropItem.cs" />
      <Compile Include="Assets\Scripts\UI\Inspector\Inspector.cs" />
+     <Compile Include="Assets\Scripts\UI\Inspector\PreviewCamera.cs" />
      <Compile Include="Assets\Scripts\UI\Inspector\WeaponInspector.cs" />
      <Compile Include="Assets\Scripts\UI\ItemButton.cs" />
-     <Compile Include="Assets\Scripts\UI\PreviewCamera.cs" />
      <Compile Include="Assets\Scripts\Utility\MouseSelector.cs" />
      <Compile Include="Assets\Scripts\Weapons\Cannon.cs" />
      <Compile Include="Assets\Scripts\Weapons\ShipComponent.cs" />
