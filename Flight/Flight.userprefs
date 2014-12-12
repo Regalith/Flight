@@ -1,13 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\Inspector\Inspector.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NGUI\Examples\Scripts\Other\ExampleDragDropItem.cs">
     <Files>
-      <File FileName="Assets\ItemButton.cs" Line="25" Column="1" />
-      <File FileName="Assets\Scripts\UI\Inspector\WeaponInspector.cs" Line="30" Column="41" />
-      <File FileName="Assets\Scripts\UI\Inspector\Inspector.cs" Line="56" Column="20" />
-      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="12" Column="23" />
-      <File FileName="Assets\Scripts\Weapons\ShipComponent.cs" Line="20" Column="30" />
-      <File FileName="Assets\Scripts\Weapons\Cannon.cs" Line="7" Column="1" />
+      <File FileName="Assets\Scripts\UI\ItemButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\Inspector\WeaponInspector.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\Inspector\Inspector.cs" Line="66" Column="27" />
+      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\ShipComponent.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Cannon.cs" Line="1" Column="1" />
+      <File FileName="Assets\NGUI\Examples\Scripts\Other\ExampleDragDropItem.cs" Line="24" Column="4" />
+      <File FileName="Assets\NGUI\Examples\Scripts\Other\ExampleDragDropSurface.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
