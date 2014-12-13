@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent (typeof (ItemButton))]
 
 public class ComponentDragDropItem : UIDragDropItem
 {
@@ -46,7 +47,7 @@ public class ComponentDragDropItem : UIDragDropItem
 	private void SpawnItemAtPoint(Vector3 position)
 	{
 		GameObject tempItem = (GameObject)Instantiate ((GameObject)Resources.Load (itemPath), position, Quaternion.identity);
-		BuildManager.instance.SetSelected (tempItem.GetComponent<Gizmo> ());
+		BuildManager.instance.SetSelected (tempItem.GetComponent<ItemModifier> ());
 	}
 
 	public void setItemPath(string path)

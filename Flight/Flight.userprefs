@@ -1,15 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\ComponentDragDropItem.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShipCreation\ItemManipulators\BuildManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\UI\ItemButton.cs" Line="22" Column="81" />
       <File FileName="Assets\Scripts\UI\Inspector\WeaponInspector.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\Inspector\Inspector.cs" Line="87" Column="1" />
+      <File FileName="Assets\Scripts\UI\ItemButton.cs" Line="15" Column="2" />
+      <File FileName="Assets\Scripts\UI\Inspector\WeaponInspector.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\Inspector\Inspector.cs" Line="84" Column="2" />
       <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\ShipComponent.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\Cannon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\ComponentDragDropItem.cs" Line="48" Column="37" />
-      <File FileName="Assets\Scripts\Utility\MouseSelector.cs" Line="55" Column="4" />
+      <File FileName="Assets\Scripts\UI\ComponentDragDropItem.cs" Line="46" Column="2" />
+      <File FileName="Assets\Scripts\Utility\MouseSelector.cs" Line="16" Column="3" />
+      <File FileName="Assets\Scripts\ShipCreation\ItemManipulators\BuildManager.cs" Line="135" Column="51" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

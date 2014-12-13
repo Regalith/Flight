@@ -32,7 +32,6 @@ public class ItemButton : MonoBehaviour {
 		switch(item.componentType)
 		{
 		case ComponentType.Weapon:
-			//weaponInspector.SetActive(true);
 			weaponInspector.GetComponent<WeaponInspector>().SetShipComponent(item);
 			weaponInspector.GetComponent<WeaponInspector>().SetPath(itemPath);
 			weaponInspector.GetComponent<WeaponInspector>().TurnOn();
@@ -43,7 +42,6 @@ public class ItemButton : MonoBehaviour {
 
 	void HideInspector()
 	{
-		//activeInspector.SetActive (false);
 		activeInspector.GetComponent<Inspector>().TurnOff ();
 		activeInspector.GetComponent<UIWidget> ().alpha = 0;
 

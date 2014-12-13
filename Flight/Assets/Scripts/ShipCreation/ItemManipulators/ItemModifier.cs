@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent (typeof(Gizmo))]
+
 public class ItemModifier : MonoBehaviour {
 
 	private Gizmo gizmo;
@@ -50,7 +52,7 @@ public class ItemModifier : MonoBehaviour {
 			gizmo.TurnOnRotate();
 		}
 	}
-
+	
 
 	void CheckValidPlacement()
 	{
@@ -70,22 +72,14 @@ public class ItemModifier : MonoBehaviour {
 		this.renderer.material = highlightMatIncorrect;
 		ChangeMaterialColors (highlightMatIncorrect);
 		SpawnGizmo ();
-		BuildManager.instance.SetSelected (gizmo);
 	}
 
 	void OnDisable ()
 	{
-		/*
-		if(gizmo.CheckActive())
-		{
-			this.enabled = true;
-		}
-		else
-		{*/
-			Destroy (gizmo.gameObject);
-			gizmo = null;
-			ChangeMaterialColors(defaultMat);
-		//}
+
+		Destroy (gizmo.gameObject);
+		gizmo = null;
+		ChangeMaterialColors(defaultMat);
 
 	}
 	public PlacementValidator GetPlacementValidator()
@@ -93,7 +87,7 @@ public class ItemModifier : MonoBehaviour {
 		return pValidator;
 	}
 
-	private void ChangeMaterialColors(Material mat)
+	public void ChangeMaterialColors(Material mat)
 	{
 		this.renderer.material = mat;
 		Transform[] allChildren = this.GetComponentsInChildren<Transform>();
@@ -102,5 +96,18 @@ public class ItemModifier : MonoBehaviour {
 			if(child.tag != "Gizmo" && child.tag != "PlacementValidator")
 				child.renderer.material = mat;	
 		}
+	}
+
+	public Material GetHighlightMaterialIncorrect()
+	{
+		return highlightMatIncorrect;
+	}
+	public Material GetHighlightMaterialCorrect()
+	{
+		return highlightMatCorrect;
+	}
+	public Material GetDefaultMaterial()
+	{
+		return defaultMat;
 	}
 }
