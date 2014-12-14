@@ -10,13 +10,12 @@ public class ItemButton : MonoBehaviour {
 	private ShipComponent item;
 
 	private GameObject weaponInspector;
-	private GameObject activeInspector;
+	public GameObject activeInspector;
 
 	// Use this for initialization
 	void Start () 
 	{
 		GameObject tempItem = Resources.Load (itemPath) as GameObject;
-		Debug.Log (tempItem.name);
 		item = tempItem.GetComponent<ShipComponent> ();
 		weaponInspector = FindInspectors ("WeaponInspector");
 		this.gameObject.GetComponent<ComponentDragDropItem> ().setItemPath (itemPath);
@@ -27,7 +26,7 @@ public class ItemButton : MonoBehaviour {
 	void Update () {
 	
 	}
-	void DisplayInspector()
+	public void DisplayInspector()
 	{
 		switch(item.componentType)
 		{
@@ -40,9 +39,9 @@ public class ItemButton : MonoBehaviour {
 		}
 	}
 
-	void HideInspector()
+	public void HideInspector()
 	{
-		activeInspector.GetComponent<Inspector>().TurnOff ();
+		activeInspector.GetComponent<WeaponInspector>().TurnOff ();
 		activeInspector.GetComponent<UIWidget> ().alpha = 0;
 
 	}
@@ -62,9 +61,14 @@ public class ItemButton : MonoBehaviour {
 	void OnHover(bool isOver)
 	{
 		if (isOver)
+		{
 			DisplayInspector ();
+		}
 		else
-			HideInspector();
+		{
+			HideInspector();			
+
+		}
 	}
 
 }

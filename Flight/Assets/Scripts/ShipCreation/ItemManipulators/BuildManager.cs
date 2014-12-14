@@ -4,7 +4,7 @@ using System.Collections;
 public class BuildManager : MonoBehaviour {
 
 	public ItemModifier selected;
-	private Gizmo selectedGizmo;
+	public Gizmo selectedGizmo { get; set;}
 	public bool buttonHovered { get; set; }
 	public ShipComponent component;
 
@@ -77,7 +77,6 @@ public class BuildManager : MonoBehaviour {
 			}
 		}
 		return null;
-		
 	}
 
 	
@@ -137,7 +136,6 @@ public class BuildManager : MonoBehaviour {
 			RemoveSelected ();
 
 		selected = s;
-		selectedGizmo = selected.GetComponent<Gizmo> ();
 		selected.enabled = true;
 	}
 

@@ -72,6 +72,7 @@ public class ItemModifier : MonoBehaviour {
 		this.renderer.material = highlightMatIncorrect;
 		ChangeMaterialColors (highlightMatIncorrect);
 		SpawnGizmo ();
+		BuildManager.instance.selectedGizmo = gizmo;
 	}
 
 	void OnDisable ()

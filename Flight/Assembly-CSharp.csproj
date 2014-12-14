@@ -182,6 +182,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\OverlapValidator.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\Camera\ShipCreationCameraController.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\BuildManager.cs" />
      <Compile Include="Assets\Scripts\ShipCreation\ItemManipulators\Gizmo.cs" />

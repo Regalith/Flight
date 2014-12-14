@@ -20,8 +20,8 @@ public class ComponentDragDropItem : UIDragDropItem
 	{
 		if (surface != null)
 		{				
-			Debug.Log (itemPath);
 			SpawnItemAtPoint(DeterminePlacementPosition());
+			this.GetComponent<ItemButton>().HideInspector();
 			// Destroy this icon as it's no longer needed
 			NGUITools.Destroy(gameObject);
 			return;

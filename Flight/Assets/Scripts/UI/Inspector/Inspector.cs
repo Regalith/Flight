@@ -39,6 +39,7 @@ public class Inspector : MonoBehaviour {
 		{
 
 			widget.alpha += .1f * fadeInSpeed * Time.deltaTime;
+			counter += .1f * fadeInSpeed * Time.deltaTime;
 			yield return null;
 		}
 	}
